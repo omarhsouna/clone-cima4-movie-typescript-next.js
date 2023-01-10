@@ -24,6 +24,7 @@ module.exports = {
       boxShadow: {
         slider: "inset 0 10px 0 #1c092f",
         playButton: "4px 4px 0 #902323",
+        buttonPagination: "0 4px #170e1f",
       },
       backgroundImage: {
         footerCard: "linear-gradient(to top,#1c1125,#0000)",
