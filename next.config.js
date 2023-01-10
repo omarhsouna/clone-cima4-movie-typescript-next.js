@@ -4,11 +4,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cima4uu.website',
+        protocol: "https",
+        hostname: "cima4uu.website",
       },
     ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
