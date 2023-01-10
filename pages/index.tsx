@@ -5,6 +5,7 @@ import SliderSection from "../components/layout/sliderSection";
 import FilterSection from "../components/filterSection";
 import { useState } from "react";
 import { Filter } from "../types";
+import MainSection from "../components/mainSection";
 
 export default function Home() {
   const [filter, setFilter] = useState<Filter>({
@@ -22,6 +23,7 @@ export default function Home() {
       <Banner />
       <SliderSection />
       <FilterSection setFilter={setFilter} filter={filter} />
+      <MainSection />
     </>
   );
 }

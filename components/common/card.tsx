@@ -3,7 +3,7 @@ import { MdPlayArrow } from "react-icons/md";
 import { IoIosFilm } from "react-icons/io";
 const Card = () => {
   return (
-    <div className="w-full min-w-[267px] h-[418px] rounded-[10px] border-[3px] border-[#ffffff17] relative overflow-hidden group ">
+    <div className="flex-1 max-w-[330px]  min-w-[240px] h-[418px] rounded-[10px] border-[3px] border-[#ffffff17] relative overflow-hidden group ">
       <div className="bg-[url('https://cima4uu.quest/wp-content/uploads/075-3580.jpg')] scale-100  group-hover:scale-125 transition-all duration-300 group-hover:transition-all group-hover:duration-500 w-full h-full bg-center bg-no-repeat bg-cover cursor-pointer"></div>
       <div className="bg-cardHover absolute left-0 top-0  group-hover:opacity-80 w-full h-full bg-center bg-no-repeat bg-cover cursor-pointer opacity-0"></div>
       <div className="absolute -top-1 -right-1 bg-numberCard flex flex-col items-center justify-center w-12 px-[10px] pt-2 pb-[10px] rounded-l-lg cursor-pointer">
