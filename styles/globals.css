@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+} 
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:linear-gradient(-180deg,#7533bd,#8c2463);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+} 
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"]+label:before {
+    content: "";
+    /* create custom radiobutton appearance */
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    margin-right: 3px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: 2px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  /* appearance for checked radiobutton */
+  input[type="checkbox"]:checked + label:before {
+    background-color: #fff;
+  }
+  
+  /* optional styles, I'm using this for centering radiobuttons */
+  label {
+    display: flex;
+    align-items: center;
+  }
+
+ul.filterButton::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+} 
+
+/* Track */
+ul.filterButton::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Handle */
+ul.filterButton::-webkit-scrollbar-thumb {
+    background:#fff;
+    border-radius: 30px;
+}
+.tooltip::before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 7px 8px 0;
+  border-color: #0000 #4c7b53 #0000 #0000;
+  content: '';
+  transition: .3s all ease;
+  position: absolute;
+  left: 100%;
+  margin-left: 4px;
+  top: 50%;
+  transform: translate(0, -50%);
+  visibility: hidden;
+  opacity: 0;
+}
+.tooltip::after {
+  content: Attr(data-tooltip);
+    position: absolute;
+    bottom: 50%;
+    left: 100%;
+    transition: .3s all ease;
+    background: #4c7b53;
+    width: 250px;
+    transform: translate(0, 50%);
+    padding: 12px;
+    pointer-events: none;
+    line-height: 20px;
+    font-size: 13px;
+    border-radius: 4px;
+    color: #ffffff;
+    margin-left: 11px;
+    visibility: hidden;
+    opacity: 0;
+}
+.tooltip:hover:after, .tooltip:hover:before {
+  visibility: visible;
+    opacity: 1;
+}
+@media only screen and (max-width: 1390px) {
+  .tooltip:after {
+    right: -13px;
+    margin-left: 0;
+    top: 100%;
+    bottom: auto;
+    max-width: 100%;
+    margin-top: 0;
+    transform: translate(0);
+    margin-top: 10px;
+    z-index: 100;
+  }
+  .tooltip::before {
+    right: 50px;
+    transform: translate(0) rotate(90deg);
+    bottom: -15px;
+    top: auto;
+  }
+}
