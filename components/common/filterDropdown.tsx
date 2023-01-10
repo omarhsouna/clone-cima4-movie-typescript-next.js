@@ -27,7 +27,7 @@ const FilterDropdown = ({ list, selectedList, handleClick }: Props) => {
         )}
       />
       {open && (
-        <ul className="filterButton max-h-[330px] w-full absolute right-0 overflow-auto top-[100%] bg-FilterButtonBg">
+        <ul className="filterButton max-h-[330px] w-full absolute right-0 overflow-auto top-[100%] z-10 bg-FilterButtonBg">
           <li
             className="py-[11px] px-4 border border-primaryBorder cursor-pointer flex items-center"
             onClick={(e) => {

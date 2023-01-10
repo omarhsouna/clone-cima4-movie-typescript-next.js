@@ -23,7 +23,6 @@ const Header = () => {
   return (
     <header className="h-[70px] px-2 flex items-center justify-between bg-primary">
       <CircleIconButton handleClick={() => setOpen(true)} className="lg:hidden">
-        {" "}
         <MdMenu />
       </CircleIconButton>
       <h1 className="text-white font-bold min-w-[240px] mx-3">CImA4U</h1>

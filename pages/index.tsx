@@ -12,7 +12,10 @@ export default function Home() {
     type: [],
     releaseYear: [],
     quality: [],
+    familyStatus: false,
+    cinemaNews: undefined,
   });
+
   return (
     <>
       <Header></Header>
