@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 interface Item {
   id: number;
   title: string;
@@ -12,11 +13,13 @@ interface Props {
 }
 const FilterDropdown = ({ list, selectedList, handleClick }: Props) => {
   const [open, setOpen] = useState(false);
-
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setOpen(false));
   return (
     <button
       className="py-3 px-4 h-15 cursor-pointer relative bg-FilterButtonBg rounded-[3px] flex-1  min-w-[200px] text-right"
       onClick={() => setOpen((open) => !open)}
+      ref={ref}
     >
       <span className="text-white text-xl">فئة العرض</span>
       <p className="text-filterButton text-xs">بدون إختيار</p>
