@@ -10,17 +10,27 @@ interface Props {
   list: Item[];
   handleClick: (id?: number) => void;
   selectedList: number[];
+  ripple?: boolean;
 }
-const FilterDropdown = ({ list, selectedList, handleClick }: Props) => {
+const FilterDropdown = ({
+  list,
+  selectedList,
+  handleClick,
+  ripple = true,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setOpen(false));
   return (
     <button
-      className="py-3 px-4 h-15 cursor-pointer relative bg-FilterButtonBg rounded-[3px] flex-1  min-w-[200px] text-right"
+      className={classNames(
+        "py-3 px-4 h-15 cursor-pointer relative bg-FilterButtonBg rounded-[3px] flex-1  min-w-[200px] text-right",
+        ripple && "ripple"
+      )}
       onClick={() => setOpen((open) => !open)}
       ref={ref}
     >
+      <span className="rip"></span>
       <span className="text-white text-xl">فئة العرض</span>
       <p className="text-filterButton text-xs">بدون إختيار</p>
       <IoIosArrowDropdown

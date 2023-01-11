@@ -124,3 +124,32 @@ ul.filterButton::-webkit-scrollbar-thumb {
     top: auto;
   }
 }
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:hover::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 1s linear;
+  animation-iteration-count: 1;
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
