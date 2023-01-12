@@ -141,15 +141,89 @@ ul.filterButton::-webkit-scrollbar-thumb {
   animation: animate 1s linear;
   animation-iteration-count: 1;
 }
-@keyframes animate {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
+.typewriter {
+  position: relative;
+}
+.typewriter::after {
+  position: absolute;
+  content: "";
+  border-right: 3px solid #f29f05;
+  animation: blink 0.5s linear infinite;
+  height: 100%;
+  top: 16%;
+  left: 0;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.pacman {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  animation: show 0s 1.6s forwards, fullTranslate 4s linear 1.6s forwards;
+}
+.pacman .before {
+  background: #ffca07;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  position: relative;
+  animation: up 0.4s infinite;
+}
+.pacman .after {
+  background: #ffca07;
+  width: 100px;
+  height: 50px;
+  border-radius: 0 0 50px 50px;
+  animation: down 0.4s infinite;
+}
+.pacman .before::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: #2a1a37;
+  border-radius: 50%;
+}
+.animatedText {
+  clip-path: inset(0 0);
+  animation: hideText 2.9s linear 1.6s forwards;
+}
+@keyframes up {
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+@keyframes down {
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fullTranslate {
+  70% {
+    transform: translateX(750px);
   }
   100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
+    transform: translate(0);
+  }
+}
+@keyframes hideText {
+  100% {
+    clip-path: inset(0 0 0 100%);
   }
 }
