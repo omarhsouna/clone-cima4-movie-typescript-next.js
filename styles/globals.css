@@ -199,6 +199,40 @@ ul.filterButton::-webkit-scrollbar-thumb {
   clip-path: inset(0 0);
   animation: hideText 2.9s linear 1.6s forwards;
 }
+.firstText {
+  animation: firstText 0.5s linear 5.3s forwards;
+}
+.lastText {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: firstText 0.5s linear 5.3s forwards;
+}
+.i {
+  opacity: 0;
+  transform: translateX(337px);
+  animation: iText 0.5s linear 5s forwards;
+}
+.m,
+.a,
+.four,
+.u {
+  opacity: 0;
+  transform: translateY(118px);
+  animation: iText 0.2s linear 5.3s forwards;
+}
+.a {
+  animation: iText 0.2s linear 5.4s forwards;
+}
+.four {
+  animation: iText 0.2s linear 5.5s forwards;
+}
+.u {
+  animation: iText 0.2s linear 5.6s forwards;
+}
+
+.wrapperText {
+  animation: wrapperText 0s linear 4.6s forwards;
+}
 @keyframes up {
   100% {
     transform: rotate(-30deg);
@@ -219,11 +253,28 @@ ul.filterButton::-webkit-scrollbar-thumb {
     transform: translateX(750px);
   }
   100% {
-    transform: translate(0);
+    transform: translate(95px);
   }
 }
 @keyframes hideText {
   100% {
     clip-path: inset(0 0 0 100%);
+  }
+}
+@keyframes firstText {
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes wrapperText {
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes iText {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
