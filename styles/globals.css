@@ -125,11 +125,14 @@ ul.filterButton::-webkit-scrollbar-thumb {
   }
 }
 .ripple {
-  position: relative;
+  z-index: 5;
   overflow: hidden;
+  position: absolute;
+  background: transparent;
+  inset: 0;
 }
 
-.ripple:hover::before {
+.ripple:hover::after {
   content: "";
   position: absolute;
   background: #fff;
@@ -138,9 +141,22 @@ ul.filterButton::-webkit-scrollbar-thumb {
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  animation: animate 1s linear;
+  animation: animate 0.4s linear;
   animation-iteration-count: 1;
 }
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
 .typewriter {
   position: relative;
 }

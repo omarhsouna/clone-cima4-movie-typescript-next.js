@@ -24,13 +24,11 @@ const FilterDropdown = ({
   return (
     <button
       className={classNames(
-        "py-3 px-4 h-15 cursor-pointer relative bg-FilterButtonBg rounded-[3px] flex-1  min-w-[200px] text-right",
-        ripple && "ripple"
+        "py-3 px-4 h-15 cursor-pointer relative bg-FilterButtonBg rounded-[3px] flex-1  min-w-[200px] text-right"
       )}
       onClick={() => setOpen((open) => !open)}
       ref={ref}
     >
-      <span className="rip"></span>
       <span className="text-white text-xl">فئة العرض</span>
       <p className="text-filterButton text-xs">بدون إختيار</p>
       <IoIosArrowDropdown
@@ -40,7 +38,7 @@ const FilterDropdown = ({
         )}
       />
       {open && (
-        <ul className="filterButton max-h-[330px] w-full absolute right-0 overflow-auto top-[100%] z-10 bg-FilterButtonBg">
+        <ul className="filterButton max-h-[330px] w-full absolute right-0 overflow-auto top-[100%] z-50 bg-FilterButtonBg ">
           <li
             className="py-[11px] px-4 border border-primaryBorder cursor-pointer flex items-center"
             onClick={(e) => {
@@ -78,6 +76,7 @@ const FilterDropdown = ({
           ))}
         </ul>
       )}
+      {ripple && <div className="ripple"></div>}
     </button>
   );
 };

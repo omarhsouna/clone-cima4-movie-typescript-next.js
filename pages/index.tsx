@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <>
       <Header></Header>
+      <div className="h-[70px]"></div>
       <Banner />
       <SliderSection />
       <FilterSection setFilter={setFilter} filter={filter} />

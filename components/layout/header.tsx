@@ -21,20 +21,20 @@ const listItems = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header className="h-[70px] px-2 flex items-center justify-between bg-primary">
+    <header className="h-[70px] px-2 flex items-center justify-between bg-primary fixed z-50 w-full">
       <CircleIconButton handleClick={() => setOpen(true)} className="lg:hidden">
         <MdMenu />
       </CircleIconButton>
       <h1 className="text-white font-bold min-w-[240px] mx-3">CImA4U</h1>
-      <nav className="mx-auto block flex-1 hidden lg:block flex items-center h-full">
+      <nav className="mx-auto  flex-1 lg:block flex items-center h-full">
         <ul className="text-white text-right text-base font-bold relative flex items-center h-full">
-          {listItems.map((item, index) => (
+          {listItems.map((item) => (
             <Fragment key={item.title}>
               <li
                 className={classNames(
-                  "cursor-pointer px-6 group flex items-center h-full",
+                  "cursor-pointer px-6 group flex items-center h-full relative",
                   {
-                    " flex items-center justify-between relative": Boolean(
+                    " flex items-center justify-between": Boolean(
                       item?.subItems?.length
                     ),
                   }
@@ -45,7 +45,7 @@ const Header = () => {
                   <MdExpandMore className="text-2xl group-hover:rotate-180" />
                 )}
                 {Boolean(item?.subItems?.length) && (
-                  <div className="w-full hidden group-hover:block absolute right-1/2 translate-x-1/2 top-[70px] min-w-[210px]  before:left-1/2 before:-top-2 before:absolute before:w-0 before:h-0 before:border-x-8 before:border-b-8 before:border-b-subMenu before:border-x-transparent">
+                  <div className="w-full hidden group-hover:block absolute right-1/2 translate-x-1/2 top-[70px] min-w-[210px]  before:left-1/2 before:-top-2 before:absolute before:w-0 before:h-0 before:border-x-8 before:border-b-8 before:border-b-subMenu before:border-x-transparent z-50">
                     <ul className="text-white bg-subMenu rounded-md relative">
                       {item.subItems?.map((subItem) => (
                         <li
@@ -58,6 +58,7 @@ const Header = () => {
                     </ul>
                   </div>
                 )}
+                <div className="ripple"></div>
               </li>
             </Fragment>
           ))}
