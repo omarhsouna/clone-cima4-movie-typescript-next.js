@@ -10,7 +10,7 @@ const CircleIconButton: React.FC<Props> = ({
   className = "",
 }) => (
   <button
-    className={`rounded-full bg-[#6f4d98] text-white flex items-center justify-center text-[30px] h-[40px] w-[40px] ${className}`}
+    className={`rounded-full bg-[#6f4d98] text-white flex items-center justify-center text-[30px] h-[40px] w-[40px] cursor-pointer ${className}`}
     onClick={handleClick}
   >
     {children}
